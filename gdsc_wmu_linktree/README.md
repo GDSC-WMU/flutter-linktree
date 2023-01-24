@@ -1,16 +1,11 @@
-# gdsc_wmu_linktree
+# GDSC WMU Linktree
 
-A new Flutter project.
+Tutorial: [First Flight with Flutter](https://www.youtube.com/watch?v=3AuxVDTPmgM&t=1483s&ab_channel=GDSCWMU)
 
-## Getting Started
+Host Account: gdsc.wmu.socials@gmail.com
 
-This project is a starting point for a Flutter application.
+## Deployment
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Merge PR
+2. `flutter build web --dart-define=BROWSER_IMAGE_DECODING_ENABLED=false --release`
+3. `firebase deploy`
