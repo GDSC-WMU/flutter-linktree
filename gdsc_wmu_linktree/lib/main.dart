@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:footer/footer.dart';
+import 'package:footer/footer_view.dart';
+import 'package:outline_gradient_button/outline_gradient_button.dart';
 
 void main() {
   runApp(const PersonalPortfolioApp());
@@ -114,14 +118,14 @@ class PersonalPortfolioState extends State<PersonalPortfolio> with TickerProvide
               ] 
             ),
             Text('Google Developer Student Club', 
-              style: TextStyle(
+              style: GoogleFonts.lato(
                 color: appColor, 
                 fontSize: 20, 
                 fontWeight: FontWeight.bold
               )
             ),
             Text('Western Michigan University', 
-              style: TextStyle(
+              style: GoogleFonts.lato(
                 color: appColor, 
                 fontSize: 15
               )
@@ -134,7 +138,7 @@ class PersonalPortfolioState extends State<PersonalPortfolio> with TickerProvide
                 SizedBox(
                   height: 100,
                   child: DefaultTextStyle(
-                      style: const TextStyle(
+                      style: GoogleFonts.expletusSans(
                         color: Colors.white, 
                         fontSize: 50
                       ),
@@ -150,52 +154,128 @@ class PersonalPortfolioState extends State<PersonalPortfolio> with TickerProvide
               ]
             ),
             const SizedBox(height: 20),
-            TextButton(
-              onPressed: () {
+            OutlineGradientButton(
+              gradient: LinearGradient(colors: [Color.fromARGB(255, 39, 96, 41), Colors.green]),
+              strokeWidth: 4,
+              radius: Radius.circular(8),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              onTap: () {
+                launchUrl(Uri.parse('https://www.youtube.com/@gdscwmu3320'));
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const FaIcon(FontAwesomeIcons.youtube, color: Colors.green),
+                  const SizedBox(width: 10),
+                  Text('YouTube', style: GoogleFonts.lato(color: Colors.white))
+                ],
+              )
+            ),
+            const SizedBox(height: 10),            
+            OutlineGradientButton(
+              gradient: LinearGradient(colors: [Color.fromARGB(255, 39, 96, 41), Colors.green]),
+              strokeWidth: 4,
+              radius: Radius.circular(8),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              onTap: () {
                 launchUrl(Uri.parse('https://www.instagram.com/gdsc_wmu/'));
               },
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  FaIcon(FontAwesomeIcons.instagram),
+                  const FaIcon(FontAwesomeIcons.instagram, color: Colors.green),
                   const SizedBox(width: 10),
-                  Text('Instagram', style: TextStyle(color: appColor))
-                ]
+                  Text('Instagram', style: GoogleFonts.lato(color: Colors.white))
+                ],
               )
             ),
             const SizedBox(height: 10),
-            TextButton(
-              onPressed: () {
+            OutlineGradientButton(
+              gradient: LinearGradient(colors: [Colors.red, Colors.orange]),
+              strokeWidth: 4,
+              radius: Radius.circular(8),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              onTap: () {
+                launchUrl(Uri.parse('https://github.com/GDSC-WMU'));
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const FaIcon(FontAwesomeIcons.github, color: Colors.deepOrange),
+                  const SizedBox(width: 10),
+                  Text('GitHub', style: GoogleFonts.lato(color: Colors.white))
+                ],
+              )
+            ),
+            const SizedBox(height: 10),
+            OutlineGradientButton(
+              gradient: LinearGradient(colors: [Colors.red, Colors.orange]),
+              strokeWidth: 4,
+              radius: Radius.circular(8),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              onTap: () {
                 launchUrl(Uri.parse('https://www.linkedin.com/company/google-developer-student-clubs-wmu/'));
               },
               child: Row(
                 mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                FaIcon(FontAwesomeIcons.linkedin),
-                const SizedBox(width: 10),
-                Text('LinkedIn', style: TextStyle(color: Colors.blueAccent))
-              ]
-            )
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const FaIcon(FontAwesomeIcons.linkedin, color: Colors.deepOrange),
+                  const SizedBox(width: 10),
+                  Text('LinkedIn', style: GoogleFonts.lato(color: Colors.white))
+                ],
+              )
             ),
             const SizedBox(height: 10),
-            TextButton(
-              onPressed: () {
+            OutlineGradientButton(
+              gradient: LinearGradient(colors: [Colors.orange, Colors.yellow]),
+              strokeWidth: 4,
+              radius: Radius.circular(8),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              onTap: () {
                 launchUrl(Uri.parse('https://gdsc.community.dev/western-michigan-university/'));
               },
               child: Row(
                 mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                FaIcon(FontAwesomeIcons.globe),
-                const SizedBox(width: 10),
-                Text('GDSC WMU', style: TextStyle(color: Colors.blueAccent))
-              ]
-            )
-            )
-          ]
-        )
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const FaIcon(FontAwesomeIcons.globe, color: Colors.yellow),
+                  const SizedBox(width: 10),
+                  Text('Events Website', style: GoogleFonts.lato(color: Colors.white))
+                ],
+              )
+            ),
+            const SizedBox(height: 10),
+            OutlineGradientButton(
+              gradient: LinearGradient(colors: [Colors.orange, Colors.yellow]),
+              strokeWidth: 4,
+              radius: Radius.circular(8),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              onTap: () {
+                launchUrl(Uri.parse('https://forms.office.com/Pages/ResponsePage.aspx?id=USJ2Jal6ckyQXzm_AmqKhEAH4b-M4TpHnpT1YOeVuktUNFJNV1k3Q0g3Vk5GQzJLQUIyRk5QUlQ5Qi4u'));
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const FaIcon(FontAwesomeIcons.addressBook, color: Colors.yellow),
+                  const SizedBox(width: 10),
+                  Text('Be a Member', style: GoogleFonts.lato(color: Colors.white))
+                ],
+              )
+            ),
+            const SizedBox(height: 40),
+            Text('Made with ❤️ Tutorial on YouTube - First Flight with Flutter', 
+              style: GoogleFonts.lato(
+                color: Colors.white, 
+                fontSize: 12
+              )
+            ),
+      ]
+      )
       )
     )
     );
