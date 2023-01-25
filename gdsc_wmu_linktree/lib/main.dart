@@ -17,11 +17,12 @@ class PersonalPortfolioApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: PersonalPortfolio(),
+        body: Container(
+          margin: const EdgeInsets.all(15),
+          child: const PersonalPortfolio(),
         ),
         backgroundColor: Colors.black,
       ),
@@ -75,6 +76,7 @@ class PersonalPortfolioState extends State<PersonalPortfolio> with TickerProvide
       child: SlideTransition(
       position: Tween<Offset>(begin: const Offset(0.0, 0.125), end: Offset.zero)
       .animate(CurvedAnimation(parent: contentCtrl, curve: Curves.easeInOut)),
+      child: SingleChildScrollView(
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -140,7 +142,7 @@ class PersonalPortfolioState extends State<PersonalPortfolio> with TickerProvide
                   child: DefaultTextStyle(
                       style: GoogleFonts.expletusSans(
                         color: Colors.white, 
-                        fontSize: 50
+                        fontSize: 35
                       ),
                       child: AnimatedTextKit(
                         animatedTexts: [
@@ -278,6 +280,7 @@ class PersonalPortfolioState extends State<PersonalPortfolio> with TickerProvide
       )
       )
     )
+      )
     );
   }
 }
